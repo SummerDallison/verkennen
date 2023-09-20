@@ -1,0 +1,24 @@
+{
+    "query": "SELECT * FROM weapon\nORDER BY attack\nLIMIT 3\n\n\n",
+    "resultcount": 3,
+    "result": [
+        {
+            "id": 1,
+            "name": "Dirk",
+            "price": 10,
+            "attack": 100
+        },
+        {
+            "id": 44,
+            "name": "Sling",
+            "price": 15,
+            "attack": 115
+        },
+        {
+            "id": 23,
+            "name": "Quarterstaff",
+            "price": 12,
+            "attack": 125
+        }
+    ]
+}

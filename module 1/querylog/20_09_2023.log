@@ -56,3 +56,103 @@ SELECT * FROM animal
 SELECT * FROM animal
 WHERE NOT type='Sheep'
 ; #09:41:00@rubyquest.db
+SELECT * FROM person
+; #09:44:57@rubyquest.db
+SELECT * FROM person
+ORDER BY name ASC
+; #09:46:06@rubyquest.db
+SELECT * FROM city
+ORDER BY name DESC
+; #09:48:16@rubyquest.db
+SELECT * FROM person
+; #09:49:19@rubyquest.db
+SELECT * FROM person
+LIMIT 10
+; #09:52:26@rubyquest.db
+SELECT * FROM weapon
+; #09:53:28@rubyquest.db
+SELECT * FROM weapon
+
+; #09:56:30@rubyquest.db
+SELECT * FROM weapon
+ORDER BY price
+LIMIT 5
+
+
+; #09:58:31@rubyquest.db
+SELECT * FROM weapon
+ORDER BY price
+LIMIT 5
+
+
+; #09:58:59@rubyquest.db
+SELECT * FROM weapon
+ORDER BY price ASC
+LIMIT 5
+
+
+; #09:59:30@rubyquest.db
+SELECT * FROM weapon
+ORDER BY price ASC
+LIMIT 5
+
+
+; #09:59:31@rubyquest.db
+SELECT * FROM weapon
+ORDER BY price DESC
+LIMIT 5
+
+
+; #09:59:37@rubyquest.db
+SELECT * FROM weapon
+
+
+
+; #09:59:59@rubyquest.db
+SELECT * FROM weapon
+ORDER BY attack
+LIMIT 3
+
+
+; #10:01:01@rubyquest.db
+SELECT * FROM weapon
+ORDER BY attack DESC
+LIMIT 3
+
+
+; #10:01:09@rubyquest.db
+SELECT * FROM weapon
+
+
+; #10:01:30@rubyquest.db
+SELECT * FROM animal
+
+
+; #10:02:02@rubyquest.db
+SELECT type FROM animal
+
+
+; #10:02:55@rubyquest.db
+SELECT * FROM animal
+
+
+; #10:03:02@rubyquest.db
+SELECT COUNT(*) FROM animal
+
+
+; #10:03:43@rubyquest.db
+SELECT DISTINCT type FROM animal
+
+
+
+; #10:05:14@rubyquest.db
+SELECT * FROM npc
+
+
+
+; #10:06:56@rubyquest.db
+SELECT DISTINCT profession FROM npc
+
+
+
+; #10:08:01@rubyquest.db
