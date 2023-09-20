@@ -1,0 +1,19 @@
+SELECT type FROM animal; #09:12:59@rubyquest.db
+SELECT type FROM animal; #09:13:40@rubyquest.db
+SELECT * FROM animal; #09:14:56@rubyquest.db
+SELECT * FROM animal
+WHERE type='Sheep'; #09:16:33@rubyquest.db
+SELECT * FROM animal
+WHERE type="Sheep"; #09:16:52@rubyquest.db
+SELECT * FROM animal
+WHERE type="Sheep"; #09:16:53@rubyquest.db
+SELECT * FROM animal
+; #09:17:03@rubyquest.db
+SELECT * FROM animal
+WHERE type="Sheep"; #09:17:56@rubyquest.db
+SELECT * FROM animal
+; #09:18:34@rubyquest.db
+SELECT * FROM animal
+WHERE owner>1; #09:19:21@rubyquest.db
+SELECT * FROM animal
+WHERE owner>0; #09:19:26@rubyquest.db
