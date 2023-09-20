@@ -17,3 +17,42 @@ SELECT * FROM animal
 WHERE owner>1; #09:19:21@rubyquest.db
 SELECT * FROM animal
 WHERE owner>0; #09:19:26@rubyquest.db
+SELECT * FROM quest
+; #09:28:07@rubyquest.db
+SELECT count(*) FROM quest
+WHERE experience>3000; #09:29:19@rubyquest.db
+SELECT * FROM person
+; #09:30:57@rubyquest.db
+SELECT * FROM person
+WHERE gold>1800
+; #09:31:20@rubyquest.db
+SELECT * FROM person
+WHERE gold<1850
+; #09:32:21@rubyquest.db
+SELECT * FROM person
+WHERE gold>=1300
+; #09:33:33@rubyquest.db
+SELECT * FROM weapon
+; #09:34:20@rubyquest.db
+SELECT * FROM weapon
+WHERE price<300
+; #09:34:38@rubyquest.db
+SELECT * FROM quest
+; #09:35:36@rubyquest.db
+SELECT * FROM quest
+WHERE gold>experience
+; #09:36:05@rubyquest.db
+SELECT * FROM creature
+; #09:36:51@rubyquest.db
+SELECT * FROM creature
+WHERE max_health>health
+; #09:37:17@rubyquest.db
+SELECT * FROM animal
+
+; #09:38:44@rubyquest.db
+SELECT * FROM animal
+
+; #09:40:41@rubyquest.db
+SELECT * FROM animal
+WHERE NOT type='Sheep'
+; #09:41:00@rubyquest.db
