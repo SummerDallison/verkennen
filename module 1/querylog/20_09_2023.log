@@ -156,3 +156,159 @@ SELECT DISTINCT profession FROM npc
 
 
 ; #10:08:01@rubyquest.db
+SELECT * FROM creature
+
+
+
+
+; #10:12:59@rubyquest.db
+SELECT * FROM creature
+
+
+
+
+; #10:14:14@rubyquest.db
+SELECT * FROM creature
+WHERE name = 'Killer Bee'
+
+
+
+; #10:14:54@rubyquest.db
+SELECT * FROM creature
+WHERE name = 'Killer Bee' and 'Orc'
+
+
+
+; #10:15:07@rubyquest.db
+SELECT * FROM creature
+WHERE name = 'Killer Bee'
+
+
+
+; #10:15:14@rubyquest.db
+SELECT * FROM creature
+WHERE name = 'Killer Bee' AND 'Orc'
+
+
+
+; #10:15:42@rubyquest.db
+SELECT * FROM creature
+WHERE name = 'Killer Bee' AND name = 'Orc'
+
+
+
+; #10:15:58@rubyquest.db
+SELECT * FROM creature
+WHERE name = 'Killer Bee'
+
+
+
+; #10:16:17@rubyquest.db
+SELECT * FROM creature
+WHERE name = 'Killer Bee'
+
+
+
+; #10:16:45@rubyquest.db
+SELECT * FROM creature
+WHERE name = 'Killer Bee'
+AND name = 'Orc'
+
+
+
+; #10:17:21@rubyquest.db
+SELECT * FROM creature
+WHERE name = 'Killer Bee' OR name = 'Orc'
+
+
+
+; #10:19:28@rubyquest.db
+SELECT * FROM animal
+
+
+
+
+; #10:20:17@rubyquest.db
+SELECT * FROM animal
+WHERE speed = 6 
+
+
+
+
+; #10:21:07@rubyquest.db
+SELECT * FROM animal
+WHERE speed = 6 AND defense = 5
+
+
+
+
+; #10:21:20@rubyquest.db
+SELECT * FROM animal
+
+
+
+
+
+; #10:22:22@rubyquest.db
+SELECT * FROM animal
+
+
+
+
+
+; #10:23:30@rubyquest.db
+SELECT * FROM animal
+WHERE type = 'Wolf' OR type = 'Bear' OR type = 'Eagle'
+
+
+
+
+; #10:24:32@rubyquest.db
+SELECT * FROM animal
+WHERE type = 'Tiger'
+
+
+
+
+; #10:25:41@rubyquest.db
+SELECT MAX(Speed) FROM animal
+
+
+
+
+; #10:27:44@rubyquest.db
+SELECT MAX(Speed) FROM animal
+WHERE type = 'Tiger'
+
+
+
+
+; #10:46:29@rubyquest.db
+SELECT MAX(Speed) FROM animal
+WHERE type = 'Tiger'
+
+
+
+
+; #10:46:30@rubyquest.db
+SELECT MAX(Speed) FROM animal
+WHERE type = 'Bear'
+
+
+
+
+; #10:46:38@rubyquest.db
+SELECT type = 'Tiger' FROM animal
+
+
+
+
+
+; #10:48:27@rubyquest.db
+SELECT MAX(Speed) FROM animal
+
+
+
+
+
+; #10:49:56@rubyquest.db

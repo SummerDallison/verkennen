@@ -1,0 +1,5 @@
+{
+    "query": "SELECT * FROM creature\nWHERE name = 'Killer Bee' and 'Orc'\n\n\n\n",
+    "resultcount": 0,
+    "result": []
+}
