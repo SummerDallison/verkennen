@@ -11,3 +11,29 @@ WHERE NOT intelligence = 30 AND NOT intelligence = 90
 SELECT * FROM hero
 
 ; #09:20:19@rubyquest.db
+SELECT * FROM weapon
+
+; #09:24:59@rubyquest.db
+SELECT * FROM weapon
+WHERE price BETWEEN 100 AND 1000
+
+; #09:26:05@rubyquest.db
+SELECT * FROM weapon
+WHERE attack BETWEEN 300 AND 600
+
+; #09:27:05@rubyquest.db
+SELECT * FROM animal
+
+; #09:27:47@rubyquest.db
+SELECT * FROM animal
+WHERE defense BETWEEN 7 AND 9
+
+; #09:29:10@rubyquest.db
+SELECT COUNT(*) FROM animal
+WHERE defense BETWEEN 7 AND 9
+
+; #09:30:44@rubyquest.db
+SELECT * FROM animal
+WHERE defense BETWEEN 7 AND 9
+
+; #09:31:11@rubyquest.db

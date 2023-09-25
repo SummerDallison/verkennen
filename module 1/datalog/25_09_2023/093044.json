@@ -1,0 +1,9 @@
+{
+    "query": "SELECT COUNT(*) FROM animal\nWHERE defense BETWEEN 7 AND 9\n\n",
+    "resultcount": 1,
+    "result": [
+        {
+            "COUNT(*)": 23
+        }
+    ]
+}
