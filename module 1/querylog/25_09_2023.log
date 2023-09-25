@@ -1,0 +1,13 @@
+SELECT * FROM person
+; #09:13:34@rubyquest.db
+SELECT * FROM person
+WHERE attack = 10 AND defense = 10 and agility = 10; #09:14:44@rubyquest.db
+SELECT * FROM hero
+
+; #09:16:32@rubyquest.db
+SELECT * FROM hero
+WHERE NOT intelligence = 30 AND NOT intelligence = 90
+; #09:19:53@rubyquest.db
+SELECT * FROM hero
+
+; #09:20:19@rubyquest.db
