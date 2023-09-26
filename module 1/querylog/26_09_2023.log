@@ -31,3 +31,23 @@ SELECT * FROM animal
 
 
 ; #09:15:30@rubyquest.db
+SELECT MIN(speed) FROM animal
+
+
+; #09:18:35@rubyquest.db
+SELECT MAX(speed) FROM animal
+
+
+; #09:19:19@rubyquest.db
+SELECT MIN(attack) FROM weapon
+
+
+; #09:20:03@rubyquest.db
+SELECT * FROM weapon
+
+
+; #09:21:03@rubyquest.db
+SELECT MAX(price) FROM weapon
+
+
+; #09:21:18@rubyquest.db

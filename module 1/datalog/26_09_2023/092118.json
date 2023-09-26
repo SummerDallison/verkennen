@@ -1,0 +1,9 @@
+{
+    "query": "SELECT MAX(price) FROM weapon\n\n\n",
+    "resultcount": 1,
+    "result": [
+        {
+            "MAX(price)": 2850
+        }
+    ]
+}
