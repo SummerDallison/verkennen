@@ -51,3 +51,53 @@ SELECT MAX(price) FROM weapon
 
 
 ; #09:21:18@rubyquest.db
+SELECT AVG(experience) FROM quest
+
+
+; #09:25:44@rubyquest.db
+SELECT SUM(gold) FROM quest
+
+
+; #09:26:52@rubyquest.db
+SELECT SUM(price) FROM weapon
+
+; #09:32:14@rubyquest.db
+SELECT * FROM weapon
+
+; #09:32:33@rubyquest.db
+SELECT * FROM weapon
+WHERE name LIKE '%sword%'
+
+; #09:33:05@rubyquest.db
+SELECT COUNT(*) FROM weapon
+WHERE name LIKE '%sword%'
+
+; #09:34:06@rubyquest.db
+SELECT COUNT(*) AND AVG(price) FROM weapon
+WHERE name LIKE '%sword%'
+
+; #09:34:44@rubyquest.db
+SELECT AVG(price) FROM weapon
+WHERE name LIKE '%sword%'
+
+; #09:34:56@rubyquest.db
+SELECT AVG(price) AND (attack) FROM weapon
+WHERE name LIKE '%sword%'
+
+; #09:36:44@rubyquest.db
+SELECT AVG(price) AND AVG(attack) FROM weapon
+WHERE name LIKE '%sword%'
+
+; #09:36:54@rubyquest.db
+SELECT AVG(price) FROM weapon
+WHERE name LIKE '%sword%'
+
+; #09:37:02@rubyquest.db
+SELECT SUM(price), AVG(price) FROM weapon
+WHERE name LIKE '%sword%'
+
+; #09:39:45@rubyquest.db
+SELECT SUM(price), AVG(price), SUM(attack), AVG(attack) FROM weapon
+WHERE name LIKE '%sword%'
+
+; #09:40:44@rubyquest.db

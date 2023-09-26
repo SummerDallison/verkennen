@@ -1,0 +1,9 @@
+{
+    "query": "SELECT SUM(gold) FROM quest\n\n\n",
+    "resultcount": 1,
+    "result": [
+        {
+            "SUM(gold)": 62231
+        }
+    ]
+}

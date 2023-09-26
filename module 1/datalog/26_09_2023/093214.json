@@ -1,0 +1,9 @@
+{
+    "query": "SELECT SUM(price) FROM weapon\n\n",
+    "resultcount": 1,
+    "result": [
+        {
+            "SUM(price)": 38565
+        }
+    ]
+}

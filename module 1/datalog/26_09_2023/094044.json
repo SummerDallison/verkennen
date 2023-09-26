@@ -1,0 +1,12 @@
+{
+    "query": "SELECT SUM(price), AVG(price), SUM(attack), AVG(attack) FROM weapon\nWHERE name LIKE '%sword%'\n\n",
+    "resultcount": 1,
+    "result": [
+        {
+            "SUM(price)": 4420,
+            "AVG(price)": 884.0,
+            "SUM(attack)": 9745,
+            "AVG(attack)": 1949.0
+        }
+    ]
+}

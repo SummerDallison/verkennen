@@ -1,0 +1,9 @@
+{
+    "query": "SELECT COUNT(*) FROM weapon\nWHERE name LIKE '%sword%'\n\n",
+    "resultcount": 1,
+    "result": [
+        {
+            "COUNT(*)": 5
+        }
+    ]
+}
