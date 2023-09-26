@@ -1,0 +1,33 @@
+SELECT * FROM npc
+; #09:10:46@rubyquest.db
+SELECT COUNT (*) FROM npc
+; #09:11:39@rubyquest.db
+SELECT COUNT (*) FROM animal
+; #09:12:22@rubyquest.db
+SELECT COUNT (*) FROM city
+
+; #09:13:13@rubyquest.db
+SELECT COUNT (*) FROM animal
+WHERE type = 'Sheep'
+
+; #09:14:06@rubyquest.db
+SELECT COUNT (*) FROM animal
+
+
+; #09:14:21@rubyquest.db
+SELECT COUNT (*) FROM animal
+WHERE type = 'Sea snake'
+
+; #09:14:56@rubyquest.db
+SELECT COUNT (*) FROM animal
+WHERE type = 'Seasnake'
+
+; #09:15:00@rubyquest.db
+SELECT COUNT (*) FROM animal
+WHERE type = 'Sea Snake'
+
+; #09:15:05@rubyquest.db
+SELECT * FROM animal
+
+
+; #09:15:30@rubyquest.db
