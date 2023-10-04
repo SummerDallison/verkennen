@@ -1,0 +1,11 @@
+{
+    "query": "select * from region\nwhere name = 'South Groval'\n\n\n",
+    "resultcount": 1,
+    "result": [
+        {
+            "id": 3,
+            "name": "South Groval",
+            "holder": 15
+        }
+    ]
+}

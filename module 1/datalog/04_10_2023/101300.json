@@ -1,0 +1,12 @@
+{
+    "query": "select name from region where name in ('South Groval', 'North Groval')\n\n\n\n\n\n",
+    "resultcount": 2,
+    "result": [
+        {
+            "name": "South Groval"
+        },
+        {
+            "name": "North Groval"
+        }
+    ]
+}

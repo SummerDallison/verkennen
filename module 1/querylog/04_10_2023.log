@@ -1,0 +1,231 @@
+select * from region; #09:47:41@rubyquest.db
+select * from region 
+; #09:50:06@rubyquest.db
+select * from region
+where name = 'South Groval'
+
+
+; #09:53:29@rubyquest.db
+select * from region
+where name = 'South Groval' and name = 'North Groval'
+
+
+; #09:54:06@rubyquest.db
+select * from region
+where name = 'South Groval' and name = 'North Groval'
+
+
+; #09:54:08@rubyquest.db
+select * from region
+where name = 'South Groval' 
+and name = 'North Groval'
+
+
+; #09:54:15@rubyquest.db
+select * from region
+
+
+
+; #09:55:26@rubyquest.db
+select * from city
+
+
+
+; #09:55:37@rubyquest.db
+select * from region
+
+
+
+
+
+; #10:02:10@rubyquest.db
+select * from city where region in ('North Groval')
+
+
+
+
+
+; #10:09:35@rubyquest.db
+select * from city 
+where region in ('North Groval')
+
+
+
+
+
+; #10:09:43@rubyquest.db
+select * from region
+
+
+
+
+
+; #10:10:18@rubyquest.db
+select * from region
+
+
+
+
+
+; #10:10:20@rubyquest.db
+select * from region
+
+
+
+
+
+; #10:10:20@rubyquest.db
+select * from region where name = 'South Groval'
+
+
+
+
+
+; #10:11:02@rubyquest.db
+select * from region where name in ('South Groval', 'North Groval')
+
+
+
+
+
+; #10:12:50@rubyquest.db
+select name from region where name in ('South Groval', 'North Groval')
+
+
+
+
+
+; #10:13:00@rubyquest.db
+select * from region where name in ('South Groval', 'North Groval')
+
+
+
+
+
+; #10:13:06@rubyquest.db
+select * from city
+
+
+
+
+
+; #10:13:30@rubyquest.db
+select * from city where region in (select name from region where name in ('South Groval', 'North Groval'))
+
+
+
+
+
+; #10:15:08@rubyquest.db
+select * from region
+
+
+
+
+
+; #10:16:50@rubyquest.db
+select * from region where name in ('North Groval', 'South Groval')
+
+
+
+
+
+; #10:17:49@rubyquest.db
+select id from region where name in ('North Groval', 'South Groval')
+
+
+
+
+
+; #10:18:12@rubyquest.db
+select * from city
+
+
+
+
+
+; #10:19:19@rubyquest.db
+select * from city where region in (select id from region where name in ('North Groval', 'South Groval'))
+
+
+
+
+
+; #10:20:13@rubyquest.db
+select name from city where region in (select id from region where name in ('North Groval', 'South Groval'))
+
+
+
+
+
+; #10:20:24@rubyquest.db
+select * from hero
+
+
+
+
+
+; #10:21:29@rubyquest.db
+select * from person
+
+
+
+
+
+; #10:21:43@rubyquest.db
+select * from animal
+
+
+
+
+
+; #10:22:08@rubyquest.db
+select * from person
+
+
+
+
+
+; #10:23:09@rubyquest.db
+select * from animal
+
+
+
+
+
+; #10:23:37@rubyquest.db
+select * from person
+
+
+
+
+
+; #10:24:43@rubyquest.db
+select id from person where name in ('Captain America')
+
+
+
+
+
+; #10:26:16@rubyquest.db
+select * from animal
+
+
+
+
+
+; #10:26:39@rubyquest.db
+select * from animal where owner in (select id from person where name in ('Captain America'))
+
+
+
+
+
+; #10:27:20@rubyquest.db
+select type from animal where owner in (select id from person where name in ('Captain America'))
+
+
+
+
+
+; #10:27:34@rubyquest.db

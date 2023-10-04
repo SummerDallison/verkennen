@@ -1,0 +1,5 @@
+{
+    "query": "select * from city where region in (select name from region where name in ('South Groval', 'North Groval'))\n\n\n\n\n\n",
+    "resultcount": 0,
+    "result": []
+}
