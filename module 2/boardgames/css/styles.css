@@ -1,1 +1,17 @@
+body{
+    background-color: black;
+    color: white;
+}
 
+h3{
+    color: yellow;
+}
+
+header{
+    background-color: red;
+    color: black;
+}
+
+ul{
+    color: green;
+}
