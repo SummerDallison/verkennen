@@ -27,6 +27,11 @@ p:nth-last-of-type(2){
     font-family: cursive;
 }
 
+p[paragraph]{
+    color: red;
+    font-family: monospace;
+}
+
 footer{
     color: red;
     font-family: monospace;
