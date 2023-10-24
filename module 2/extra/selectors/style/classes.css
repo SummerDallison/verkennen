@@ -1,0 +1,38 @@
+body{
+    background-color: black;
+}
+
+#rood{
+    color: red;
+    font-family: monospace;
+    text-decoration: underline;
+}
+
+#geel{
+    color: yellow;
+    font-family: cursive;
+    background-color: red;
+}
+
+h1.groen{
+    color: green;
+}
+
+h2.oranje{
+    color: orange;
+}
+
+p.geel{
+    color: yellow;
+    font-family: cursive;
+}
+
+p.blauw{
+    color: blue;
+    font-weight: bold;
+}
+
+p.rood{
+    color: red;
+    font-family: monospace;
+}
