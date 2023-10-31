@@ -18,11 +18,7 @@ h3{
     color: yellow;
 }
 
-#section2{
-    margin-bottom: 5px;
-}
-
-#header{
+header{
     background-color: red;
     color: black;
     font-family: cursive;
@@ -36,12 +32,8 @@ h3{
     text-align: center;
 }
 
-ul{
+li{
     color: green;
-}
-
-#section1, #section2, #section3, #section4, #section5, #section6{
-    padding: 5px;
 }
 
 nav>a{
