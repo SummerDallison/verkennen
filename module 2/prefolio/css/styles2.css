@@ -6,13 +6,13 @@ body{
     margin: 0 auto;
 }
 
-#header{
+header{
     color: darkslateblue;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 25px;
 }
 
-#h1{
+h1{
     background-color: lightblue;
  
     border: 4PX solid palevioletred;
@@ -29,20 +29,8 @@ h2{
     color: blueviolet;
 }
 
-#h3{
-    color: blueviolet;
-}
-
 ul{
     color: purple;
-}
-
-h4{
-    color: darkmagenta;
-}
-
-#section1, #section2, #section3, #section4, #section5{
-    padding: 1px;
 }
 
 nav>a{
