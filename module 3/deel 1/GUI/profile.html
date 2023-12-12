@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+  <title>New Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Profile form</h1>
+  <form id="form_profile">
+    <p>
+      <label>Name: </label>
+      <input type="text" name="input_name" id="input_name" required>
+    </p>
+    <p>
+      <label>Birth date: </label>
+      <input type="date" name="input_birthdate" id="input_birthdate" required>
+    </p>
+    <p>
+      <label>Address: </label>
+      <input type="text" name="input_address" id="input_address" required>
+    </p>
+    <p>
+      <label>Zipcode: </label>
+      <input type="text" name="input_zipcode" id="input_zipcode" required>
+    </p>
+    <p>
+      <label>City: </label>
+      <input type="text" name="input_city" id="input_city" required>
+    </p>
+    <p>
+      <label>Country: </label>
+      <input type="text" name="input_country" id="input_country" required>
+    </p>
+    <p>
+      <label>E-Mail: </label>
+      <input type="email" name="input_email" id="input_email" required>
+    </p>
+    <p>
+      <label>Years experience: </label>
+      <input type="number" name="input_yearsexperience" id="input_yearsexperience" min="0" max="100" required>
+    </p>
+    <p>
+      <label>Hobbies: </label>
+      <textarea name="input_hobbies" id="input_hobbies" rows="4" cols="50" maxlength="200" required="true"></textarea>
+    </p>
+    <p>
+      <label>Url: </label>
+      <input type="url" name="input_url" id="input_url" required>
+    </p>
+    <input type="submit" id="submit_button" value="submit">
+    <input type="reset" id="reset_button" value="reset">
+  </form>
+  <div id="profile">
+    <h1>Profile</h1>
+    <p><label>Name: </label><span id="display_name"></span></p>
+    <p><label>Birth date: </label><span id="display_birthdate"></span></p>
+    <p><label>Address: </label><span id="display_address"></span></p>
+    <p><label>Zipcode: </label><span id="display_zipcode"></span></p>
+    <p><label>City: </label><span id="display_city"></span></p>
+    <p><label>Country: </label><span id="display_country"></span></p>
+    <p><label>E-Mail: </label><span id="display_email"></span></p>
+    <p><label>Years experience: </label><span id="display_yearsexperience"></span></p>
+    <p><label>Hobbies: </label><span id="display_hobbies"></span></p>
+    <p><label>Url: </label><span id="display_url"></span></p>
+  </div>
+
+  <script>
+    function submit(event){
+      display_name.textContent = input_name.value;
+      display_birthdate.textContent = input_birthdate.value;
+      display_address.textContent = input_address.value;
+      display_zipcode.textContent = input_zipcode.value;
+      display_city.textContent = input_city.value;
+      display_country.textContent = input_country.value;
+      display_email.textContent = input_email.value;
+      display_yearsexperience.textContent = input_yearsexperience.value;
+      display_hobbies.textContent = input_hobbies.value;
+      display_url.textContent = input_url.value;
+    }
+    function upper(event){
+      input_city.value = input_city.value.toUpperCase();
+    }
+
+    function submit(event){
+      display_name.textContent = "";
+      display_birthdate.textContent = "";
+      display_address.textContent = "";
+      display_zipcode.textContent = "";
+      display_city.textContent = "";
+      display_country.textContent = "";
+      display_email.textContent = "";
+      display_yearsexperience.textContent = "";
+      display_hobbies.textContent = "";
+      display_url.textContent = "";
+    }
+
+    submit_button.addEventListener('click',submit);
+    reset_button.addEventListener('click', reset);
+    
+
+    input_city.addEventListener('focusout', upper)
+
+    // prevent document from default trying to really submit
+    function form_submit(event){
+      event.preventDefault();
+    }
+    form_profile.addEventListener('submit',form_submit)
+
+
+  </script>
+</body>
+</html>
