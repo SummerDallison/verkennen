@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <title>base</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Pizza Calculator</h1>
+  <form id="form">
+    <p>
+      <label>Aantal small pizza's: </label>
+      <input type="number" name="input_small" id="input_small" min="0" required>
+    </p>
+    <p>
+      <label>Aantal medium pizza's: </label>
+      <input type="number" name="input_medium" id="input_medium" min="0" required>
+    </p>
+    <p>
+      <label>Aantal large pizza's: </label>
+      <input type="number" name="input_large" id="input_large" min="0" required>
+    </p>
+    <input type="submit" id="submit_button" value="berekenen">
+  </form>
+  <div id="kassa bon">
+    <h1>************** KASSA BON *************</h1>
+    <p><label>Pizza's small: </label><span id="display_small"></span></p>
+    <p><label>Pizza's medium: </label><span id="display_medium"></span></p>
+    <p><label>Pizza's large: </label><span id="display_large"></span></p>
+    <p><label>------------ </label><span id="-"></span></p>
+    <p><label>Totaal: </label><span id="display_totaal"></span></p>
+  </div>
+
+  <script>
+    const PRIJS_SMALL = 6.50
+    const PRIJS_MEDIUM = 9.30
+    const PRIJS_LARGE = 11.10
+
+    function submit(event){
+        display_small.textContent = input_small.value + " x " + "€" +PRIJS_SMALL.toFixed(2) + " = " + "€" + (input_small.value * PRIJS_SMALL).toFixed(2);
+        display_medium.textContent = input_medium.value + " x " + "€" + PRIJS_MEDIUM.toFixed(2) + " = " + "€" + (input_medium.value * PRIJS_MEDIUM).toFixed(2);
+        display_large.textContent = input_large.value + " x " + "€" + PRIJS_LARGE.toFixed(2) + "=" + "€" + (input_large.value * PRIJS_LARGE).toFixed(2);
+        display_totaal.textContent = "€" + (input_small.value * PRIJS_SMALL + input_medium.value * PRIJS_MEDIUM + input_large.value * PRIJS_LARGE).toFixed(2)
+    }
+    submit_button.addEventListener('click',submit);
+
+    // prevent document from default trying to really submit
+    function form_submit(event){
+      event.preventDefault();
+    }
+    form.addEventListener('submit',form_submit)
+
+  </script>
+</body>
+</html>
