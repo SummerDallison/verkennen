@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+  <title>base</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Base</h1>
+  <form id="form">
+    <p>
+      <label>Aantal spelers: </label>
+      <input type="number" name="input_toegang" id="input_toegang" min="0" required>
+    </p>
+    <p>
+      <label>Aantal spelers in de VIP seat: </label>
+      <input type="number" name="input_vipseat" id="input_vipseat" min="0" required>
+    </p>
+    <p>
+      <label>Tijd in de VIP seat (minuten): </label>
+      <input type="number" name="input_tijd" id="input_tijd" min="0" required>
+    </p>
+    <input type="submit" id="submit_button" value="berekenen">
+  </form>
+  <div id="kassa bon">
+    <h1>************** KASSA BON ************** </h1>
+    <p><label>Toegang: </label><span id="display_toegang"></span></p>
+    <p><label>VIP seat periodes: </label><span id="display_tijd"></span></p>
+    <p><label>VIP seat prijs pp: </label><span id="display_perpersoon"></span></p>
+    <p><label>VIP seat: </label><span id="display_vipseat"></span></p>
+    <p><label>------------ </label><span id="-"></span></p>
+    <p><label>Totaal: </label><span id="display_totaal"></span></p>
+  </div>
+
+  <script>
+    const PRIJS_TOEGANG = 12.45
+    const PERIODE_VIPSEAT = 5
+    const PRIJS_VIPSEAT = 0.65
+
+    function submit(event){
+      display_toegang.textContent = input_toegang.value + " x " + "€" + PRIJS_TOEGANG + " = " + "€"  + (input_toegang.value * PRIJS_TOEGANG).toFixed(2);
+
+      const aantal_periodes = Math.ceil(input_tijd.value / PERIODE_VIPSEAT)
+      display_tijd.textContent = input_tijd.value + " : " + PERIODE_VIPSEAT + " = " + aantal_periodes
+
+      display_perpersoon.textContent = aantal_periodes + " x " + "€" + PRIJS_VIPSEAT + " = " +  "€" + (aantal_periodes * PRIJS_VIPSEAT).toFixed(2);
+      const vipseat_prijs = aantal_periodes * PRIJS_VIPSEAT
+
+      display_vipseat.textContent = input_vipseat.value + " x " + "€" + vipseat_prijs + " = " + "€" + (input_vipseat.value * vipseat_prijs).toFixed(2)
+ 
+      display_totaal.textContent = "€" + (input_toegang.value * PRIJS_TOEGANG + input_vipseat.value * vipseat_prijs).toFixed(2)
+    }
+    submit_button.addEventListener('click',submit);
+
+    // prevent document from default trying to really submit
+    function form_submit(event){
+      event.preventDefault();
+    }
+    form.addEventListener('submit',form_submit)
+
+  </script>
+</body>
+</html>
