@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <title>base</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Feestlunch</h1>
+  <form id="form">
+    <p>
+        <label>Aantal croissants: </label>
+        <input type="number" name="input_croissants" id="input_croissants" min="0" required>
+    </p>
+    <p>
+      <label>Aantal stokbroden: </label>
+      <input type="number" name="input_stokbroden" id="input_stokbroden" min="0" required>
+    </p>
+    <p>
+        <label>Aantal kortingsbonnen: </label>
+        <input type="number" name="input_kortingsbonnen" id="input_kortingsbonnen" min="0" max="20" required>
+    </p>
+    <input type="submit" id="submit_button" value="berekenen">
+  </form>
+  <div id="kassa bon">
+    <h1>************ KASSA BON ************</h1>
+    <p><label>Croissants: </label><span id="display_croissants"></span></p>
+    <p><label>Stokbroden: </label><span id="display_stokbroden"></span></p>
+    <p><label>kortingsbonnen: </label><span id="display_kortingsbonnen"></span></p>
+    <p><label>Totaal: </label><span id="display_totaal"></span></p>
+  </div>
+
+  <script>
+    const CROISSANT_PRICE = 0.49
+    const STOOKBROOD_PRICE = 1.92
+    const KORTINGSBON_PRICE = 0.25
+
+    function submit(event){
+        display_croissants.textContent = input_croissants.value + " x " + CROISSANT_PRICE + " = " + (input_croissants.value * CROISSANT_PRICE).toFixed(2);
+        display_stokbroden.textContent = input_stokbroden.value + " x " + STOOKBROOD_PRICE + " = " + (input_stokbroden.value * STOOKBROOD_PRICE).toFixed(2);
+        display_kortingsbonnen.textContent = input_kortingsbonnen.value + " x " + KORTINGSBON_PRICE + " = " + (input_kortingsbonnen.value * KORTINGSBON_PRICE).toFixed(2);
+        display_totaal.textContent = (input_croissants.value * CROISSANT_PRICE + input_stokbroden.value * STOOKBROOD_PRICE - input_kortingsbonnen.value * KORTINGSBON_PRICE).toFixed(2);
+    }
+    submit_button.addEventListener('click',submit);
+
+    // prevent document from default trying to really submit
+    function form_submit(event){
+      event.preventDefault();
+    }
+    form.addEventListener('submit',form_submit)
+
+  </script>
+</body>
+</html>
