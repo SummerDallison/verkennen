@@ -1,0 +1,107 @@
+#header{
+    text-align: center;
+    font-family: cursive;
+    font-size: 30px;
+
+    background-color: whitesmoke;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#overzicht>h2{
+    font-size: 25px;
+}
+
+.h3>h3{
+    font-size: 20px;
+}
+
+.h3>p{
+    font-size: 15px;
+}
+
+.prefolio-img{
+    display: none;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+    background-color: white;
+    width : 450px;
+}
+
+.bootstrap-img{
+    display: none;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+    background-color: white;
+    width : 450px;
+}
+
+.gridsysteem1-img{
+    display: none;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+    background-color: white;
+    width : 450px;
+}
+
+.gridsysteem2-img{
+    display: none;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+    background-color: white;
+    width : 450px;
+}
+
+.responsive-img{
+    display: block;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+    background-color: white;
+    width : 450px;
+}
+
+.recepten-img{
+    display: block;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+    background-color: white;
+    width : 450px;
+}
+
+footer{
+    font-family: cursive;
+}
+
+@media (min-width: 576px) {
+    .prefolio-img{
+        display: block;
+    }
+
+    .bootstrap-img{
+        display: block;
+    }
+
+    .gridsysteem1-img{
+        display: block;
+    }
+
+    .gridsysteem2-img{
+        display: block;
+    }
+
+    .responsive-img{
+        display: block;
+    }
+
+    .recepten-img{
+        display: block;
+    }
+}
