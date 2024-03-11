@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <style>
+        #counter{
+            background-color: lemonchiffon;
+            padding: 3px;
+            text-align:  center;
+            border-bottom: 1px solid black;
+
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+
+        h1{
+            padding-left: 15px;
+            padding-top: 35px;
+        }
+
+        .object-container{
+            position: relative;
+            float: left;
+            background-size: contain;
+            margin: 10px;
+            border: 3px solid black;
+            overflow: hidden;
+            text-align: left;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 10%;
+            padding: 10px;
+        }
+
+        .object-container h2{
+            text-align: center;
+        }
+
+        .object-container h3{
+            position: absolute;
+            text-align: center;
+            bottom: 10px;
+            font-size: 90px;
+            width: 40%;
+            left: 30%;
+        }
+
+        .object-container textarea{
+            width: 93%;
+            height: 190px;
+            position: absolute;
+            top: 90px;
+        }
+
+        .object-container button{
+            font-size: 30px;
+            position: absolute;
+            width: 20%;
+            bottom: 45px;
+        }
+
+        .object-container button.add{
+            left: 5%;
+        }
+
+        .object-container button.min{
+            left: 75%;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="counter">
+            <span id="points"></span>
+            <button id="finalize">Volgende stap</button>
+        </div>
+        <h1>Wat vindt ik belangrijk op mijn stage?</h1>
+        <div id="cards">
+
+        </div>
+    </div>
+
+<script>
+    var container = document.getElementById('cards');
+    var finalizeBtn = document.getElementById('finalize');
+    var pointsTxt = document.getElementById('points');
+    var points = 30;
+    var choices = 0;
+    var pointsLeft = points;
+    var values = [
+    [
+            'Frond-end development',
+            'Het moet er tiptop uitzien en prettig werken!',
+            0
+        ],[
+            'Back-end development',
+            'Het draait om logische en technische perfectie!',
+            0
+        ],[
+            'Embedded development',
+            'Een robot tot leven brengen, wat is er mooier!?',
+            0
+        ],[
+            'Full stack development',
+            'Ik ben een alleskunner!',
+            0
+        ],[
+            'Python',
+            '',
+            0
+        ],[
+            'PHP',
+            '',
+            0
+        ],[
+            'HTML/CSS',
+            '',
+            0
+        ],[
+            'JavaScript',
+            '',
+            0
+        ],[
+            'Java',
+            '',
+            0
+        ],[
+            'C#/C++',
+            '',
+            0
+        ],[
+            '(My)SQL',
+            '',
+            0
+        ],[
+            'Een andere taal',
+            '',
+            0
+        ],[
+            'Solo werken aan een project',
+            'Watervallen',
+            0
+        ],[
+            'In een groep werken',
+            'Scrum/Agile',
+            0
+        ],[
+            'Apps',
+            '',
+            0
+        ],[
+            'Web based',
+            'Websites/Webapplicaties',
+            0
+        ],[
+            'Programma\'s',
+            '',
+            0
+        ],[
+            'Mede vakidiooten',
+            '',
+            0
+        ],[
+            'Blockchain',
+            '',
+            0
+        ],[
+            '???',
+            'Iets dat ik mis in dit lijstje',
+            0
+        ],
+    ];
+
+    function createCard(i, step) {
+
+        var card = document.createElement('div');
+        var title = document.createElement('h2');
+        var counter = document.createElement('h3');
+        var description = document.createElement('p');
+
+        card.classList.add('object-container');
+
+        title.innerHTML = values[i][0];
+        description.innerHTML = values[i][1];
+
+        card.appendChild(title);
+        counter.innerHTML = values[i][2];
+
+        switch (step) {
+            case 2:
+                if(values[i][2] == 0){
+                    return null;
+                }
+
+                title.innerHTML = values[i][0]+ ' ('+values[i][2]+' punten)';
+                var txtArea = document.createElement('textarea');
+                txtArea.id = 'area'+i;
+                txtArea.onkeyup = checkAreas;
+
+                card.appendChild(txtArea);
+                break
+
+
+            case 3:
+                if(values[i][2] == 0){
+                    return null;
+                }
+
+                card.appendChild(description);
+                card.appendChild(counter);
+                break;
+
+            default:
+                var buttonAdd = document.createElement('button');
+                var buttonMin = document.createElement('button');
+
+                buttonAdd.innerHTML = '+';
+                buttonAdd.id = 'add'+i;
+                buttonAdd.classList.add('add');
+                buttonAdd.onclick = add;
+
+                buttonMin.innerHTML = '-';
+                buttonMin.id = 'min'+i;
+                buttonMin.classList.add('min');
+                buttonMin.onclick = min;
+
+                card.appendChild(description);
+                card.appendChild(buttonAdd);
+                card.appendChild(counter);
+                card.appendChild(buttonMin);
+        }
+
+        return card;
+    }
+
+    function add() {
+        var id = this.id.replace('add', '');
+        if(pointsLeft > 0) {
+            values[id][2]++;
+            build(1);
+        }
+    }
+
+    function min() {
+        var id = this.id.replace('min', '');
+        if(values[id][2] > 0) {
+            values[id][2]--;
+            build(1);
+        }
+    }
+
+    function build(step) {
+        container.innerHTML = '';
+        pointsLeft = points;
+        choices = 0;
+        for (var i=0; i < values.length; i ++) {
+            pointsLeft -= values[i][2];
+
+            var card = createCard(i, step);
+
+            if(card != null) {
+                container.appendChild(card);
+            }
+
+            if(values[i][2] > 0){
+                choices++;
+            }
+        }
+
+        switch (step) {
+            case 2:
+                checkAreas();
+                break;
+
+            default:
+                if(pointsLeft == 0){
+                    finalizeBtn.style.display = 'inline';
+                    pointsTxt.style.display = 'none';
+
+                }else {
+                    finalizeBtn.style.display = 'none';
+                    pointsTxt.style.display = 'block';
+                    pointsTxt.innerHTML = pointsLeft + ' punten over';
+                }
+        }
+
+    }
+
+    function checkAreas(){
+        toFill = 0;
+        finalizeBtn.style.display = 'inline';
+        pointsTxt.style.display = 'none';
+
+        for (var i=0; i < values.length; i ++) {
+            if(values[i][2] > 0){
+                var inputVal = document.getElementById('area'+i).value;
+                values[i][1] = inputVal;
+
+                if(inputVal.length == 0){
+                    finalizeBtn.style.display = 'none';
+                    toFill++;
+                }
+            }
+        }
+
+        if(toFill > 0) {
+            pointsTxt.style.display = 'block';
+            pointsTxt.innerHTML = toFill + ' nog te vullen';
+        }else{
+            finalizeBtn.onclick = function () {
+                document.getElementById('counter').style.display = 'none';
+                build(3);
+            };
+        }
+    }
+
+
+    values.sort(function (a,b) {
+        if(a[0] < b[0]) { return -1; }
+        if(a[0] > b[0]) { return 1; }
+        return 0;
+    });
+
+    build(1);
+
+    finalizeBtn.onclick = function () {
+        finalizeBtn.innerHTML = 'Afronden';
+        finalizeBtn.style.display = 'none';
+
+        values.sort(function (a,b) {
+            if(a[2] < b[2]) { return 1; }
+            if(a[2] > b[2]) { return -1; }
+            return 0;
+        });
+
+        build(2);
+    };
+
+</script>
+</body>
+</html>
